@@ -210,8 +210,7 @@ if __name__ == '__main__':
 
         # Nice-Steinway-v3.8.sf2
         """
-        pre, note, end = re.split('([ABCDEFG][#b]?[0123456789])', s.name)
-        note, lvl = note[:-1], note[-1]
+        note, lvl = re.search('([ABCDEFG][#b]?)([0123456789]+)', s.name).groups()
         note = ENHARMONICS.get(note, note)
         filename = 'Piano.ff.{}_V{}.wav'.format(note, lvl)
         """
